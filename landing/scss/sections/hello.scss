@@ -1,0 +1,91 @@
+.hello {
+    @include section-bg("../../img/bg_sec1.png");
+    padding-top: rem(13px);
+}
+
+.hello__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header__logo {
+    margin-right: auto;
+}
+
+.logo-svg {
+    width: rem(90px);
+}
+
+
+.navigation__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.navigation__item {
+    position: relative;
+    margin-left: rem(32px);
+
+    &:not(:first-child)::before {
+        content: "";
+        @include circle(rem(3px), white);
+        position: absolute;
+        left: rem(-18px);
+        top: rem(9px);
+    }
+}
+
+.navigation__link {
+    color: white;
+    font-size: rem(13px);
+    text-transform: uppercase;
+    line-height: 1;
+
+    &:hover {
+        border-bottom: 1px white solid;
+    }
+}
+
+.header__btn {
+    margin-left: rem(16px);
+}
+
+.hello__main {
+    padding-bottom: 10%;
+}
+
+.main__right {
+    text-align: left;
+}
+
+.drops {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-53%)
+}
+
+.hello__title {
+    @extend %title;
+    margin: rem(30px) 0;
+    line-height: 1;
+    color: $orange;
+}
+
+.natural-burgers {
+    font-family: 'lifehackmedium';
+    color: white;
+    font-size: rem(65px);
+    font-weight: 400;
+    margin: 0;
+    line-height: .9;
+}
+
+
+.scroll {
+    margin-bottom: rem(30px);
+}
