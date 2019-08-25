@@ -1,6 +1,15 @@
 .about {
-    @include section-bg("../../img/bg_sec2.png");
+    @include section-bg("../../img/bg_sec2.jpg");
     background-position: center bottom;
+
+    @include tablet {
+        @include section-bg("../../img/about-bg-tab.jpg");
+        background-position: center center;
+    }
+
+    @include phone {
+        @include section-bg("../../img/about-bg-mob.jpg");
+    }
 }
 
 .about__container {
@@ -11,10 +20,23 @@
     @extend %title;
     color: $black;
     margin: 0 0 rem(50px) 0;
+
+    @include miniphone {
+        margin-bottom: rem(30px);
+    }
 }
 
 .about__main {
     padding-bottom: 5%;
+
+    @include phone {
+        padding-bottom: 15%;
+    }
+
+    @include miniphone {
+        margin-bottom: 25%;
+        padding-bottom: 0;
+    }
 }
 
 .about__list {
@@ -23,6 +45,10 @@
     justify-content: space-between;
     align-items: baseline;
     flex-direction: row;
+
+    @include phone {
+        flex-direction: column;
+    }
 }
 
 .about__item {
@@ -30,12 +56,42 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: rem(10px);
+    flex: 1;
+
+    @include phone {
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+    }
+}
+
+.about__icon {
+    @include phone {
+        width: 35%;
+    }
+}
+
+.about__icon-pic {
+    max-width: 100%;
+}
+
+.about__content {
+    display: flex;
+    flex-direction: column;
+
+    @include phone {
+        align-items: flex-start;
+        text-align: left;
+        margin-left: 3%;
+        width: 65%;
+    }
 }
 
 .about__feature {
     font-family: 'lifehackmedium';
     font-size: rem(24px);
-    width: rem(300px);
+    width: 100%;
     margin: rem(35px) 0 rem(25px) 0;
 }
 
@@ -43,5 +99,5 @@
     margin: 0;
     @extend %text;
     color: $black;
-    width: rem(300px);
+    width: 100%;
 }

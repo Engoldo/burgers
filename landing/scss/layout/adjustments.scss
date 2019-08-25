@@ -1,10 +1,13 @@
 .wrapper {
     position: relative;
     text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
 .container {
-    width: rem(940px);
+    width: 95%;
+    max-width: rem(940px);
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -18,11 +21,27 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    @include phone {
+        flex-direction: column;
+    }
 }
 
 .column {
     width: 50%;
     position: relative;
+
+    @include tablet {
+        width: 100%;
+    }
+
+    @include phone {
+        width: 100%;
+    }
 }
 
 %title {
@@ -30,6 +49,10 @@
     font-size: rem(72px);
     font-weight: 400;
     line-height: 1;
+
+    @include phone {
+        font-size: rem(60px);
+    }
 }
 
 %undertitle {
@@ -45,7 +68,6 @@
     color: white;
     line-height: 1.6;
 }
-
 
 %btn {
     color: white;

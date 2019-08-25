@@ -1,5 +1,5 @@
-@import "./config/mixin.scss";
 @import "./config/variables.scss";
+@import "./config/mixin.scss";
 
 @import "./layout/fonts.scss";
 @import "./layout/base.scss";
@@ -9,4 +9,8 @@
 
 @import "./sections/hello.scss";
 @import "./sections/about.scss";
+@import "./sections/team.scss";
+@import "./sections/menu.scss";
 @import "./sections/comments.scss";
+@import "./sections/order.scss";
+@import "./sections/contacts.scss";

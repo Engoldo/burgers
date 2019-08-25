@@ -1,3 +1,23 @@
+html {
+    font-size: 16px;
+
+    @include laptop {
+        font-size: 14px;
+    }
+
+    @include tablet {
+        font-size: 14px;
+    }
+
+    @include minitablet {
+        font-size: 14px;
+    }
+
+    @include phone {
+        font-size: 13px;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
