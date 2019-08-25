@@ -1,0 +1,135 @@
+.team {
+    @include section-bg("../../img/team-bg.jpg");
+    background-position: center bottom;
+    position: relative;
+}
+
+.team__column {
+    background: rgba(47, 50, 52, .93);
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.team__content {
+    margin: rem(80px);
+    text-align: left;
+
+    @include tablet {
+        text-align: center;
+        margin-left: rem(40px);
+        margin-right: rem(40px);
+    }
+}
+
+.team__title {
+    @extend %title;
+    color: $orange;
+}
+
+.team__item {
+    margin-top: rem(40px);
+
+    &.active {
+        .team__name {
+            color: $orange;
+
+            &:before {
+                transform: rotate(180deg);
+            }
+        }
+
+        .team__hide {
+            height: 100%;
+        }
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.team__hide {
+    display: flex;
+    margin-top: rem(20px);
+    height: 0;
+    overflow: hidden;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: column;
+    }
+}
+
+.team__name {
+    @extend %undertitle;
+    color: white;
+    display: block;
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 5px solid transparent;
+        border-top: 6px solid $orange;
+        transition: 0.3s;
+        position: absolute;
+        left: rem(-18px);
+        top: rem(5px);
+        transform-origin: 50% 25%;
+    }
+
+    @include tablet {
+        display: flex;
+        font-size: rem(24px);
+    }
+}
+
+.team__img {
+    background-size: rem(100px), rem(100px);
+    background-position: cover;
+    width: rem(100px);
+    height: rem(100px);
+    border-radius: 50%;
+}
+
+.dan,
+.richard,
+.jake,
+.nick {
+    background-image: url(../../img/team-ava.jpg);
+}
+
+.team__desc {
+    margin-left: rem(20px);
+
+    @include tablet {
+        margin-left: 0;
+        margin-top: rem(15px);
+        max-width: 80%;
+    }
+}
+
+.team__text,
+.team__who {
+    @extend %text;
+
+    @include tablet {
+        font-size: 1rem;
+    }
+}
+
+.team__who {
+    display: block;
+    font-weight: 700;
+    margin-bottom: rem(15px);
+}
