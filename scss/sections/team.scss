@@ -1,11 +1,11 @@
 .team {
-    @include section-bg("../../img/team-bg.jpg");
+    @include section-bg('../../img/team-bg.jpg');
     background-position: center bottom;
     position: relative;
 }
 
 .team__column {
-    background: rgba(47, 50, 52, .93);
+    background: rgba(47, 50, 52, 0.93);
     width: 50%;
     position: absolute;
     top: 0;
@@ -23,6 +23,7 @@
 
     @include tablet {
         text-align: center;
+        margin-top: 30%;
         margin-left: rem(40px);
         margin-right: rem(40px);
     }
@@ -36,20 +37,6 @@
 .team__item {
     margin-top: rem(40px);
 
-    &.active {
-        .team__name {
-            color: $orange;
-
-            &:before {
-                transform: rotate(180deg);
-            }
-        }
-
-        .team__hide {
-            height: 100%;
-        }
-    }
-
     @include tablet {
         display: flex;
         flex-direction: column;
@@ -61,8 +48,10 @@
     display: flex;
     margin-top: rem(20px);
     height: 0;
+    max-height: 0;
     overflow: hidden;
     align-items: center;
+    transition: 0.3s ease-in-out;
 
     @include tablet {
         flex-direction: column;
@@ -72,11 +61,11 @@
 .team__name {
     @extend %undertitle;
     color: white;
-    display: block;
     position: relative;
+    transition: 0.3s;
 
     &:before {
-        content: "";
+        content: '';
         width: 0;
         height: 0;
         border: 5px solid transparent;
@@ -86,6 +75,11 @@
         left: rem(-18px);
         top: rem(5px);
         transform-origin: 50% 25%;
+        transition: 0.3s;
+    }
+
+    &:hover {
+        color: $orange;
     }
 
     @include tablet {
@@ -132,4 +126,19 @@
     display: block;
     font-weight: 700;
     margin-bottom: rem(15px);
+}
+
+.active-acco {
+    .team__name {
+        color: $orange;
+
+        &:before {
+            transform: rotate(180deg);
+        }
+    }
+
+    .team__hide {
+        max-height: 200px;
+        height: 100%;
+    }
 }

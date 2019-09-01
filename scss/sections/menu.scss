@@ -1,13 +1,9 @@
 .menu {
-    @include section-bg("../../img/menu-bg.jpg");
+    @include section-bg('../../img/menu-bg.jpg');
     background-position: right bottom;
     position: relative;
     display: flex;
     justify-content: space-between;
-
-    // @include tablet{
-    //     @include section-bg("../../img/menu-bg-tab.jpg");
-    // }
 }
 
 .menu__title {
@@ -26,12 +22,6 @@
     }
 }
 
-.menu__title--hide {
-    @include tablet {
-        display: none;
-    }
-}
-
 .menu__acco {
     width: 60%;
     height: 100%;
@@ -39,12 +29,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-}
-
-.menu__acco--active {
-    @include tablet {
-        width: 100%
-    }
 }
 
 .menu__list {
@@ -57,22 +41,7 @@
 .menu__item {
     display: flex;
     height: 100%;
-}
-
-.menu__item--active {
-    .menu__content {
-        width: 100%;
-        padding: rem(60px) rem(35px);
-    }
-
-    @include phone {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
+    position: relative;
 }
 
 .menu__slider {
@@ -81,6 +50,10 @@
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+
+    &:hover .menu__name {
+        color: $orange;
+    }
 }
 
 .menu__name {
@@ -88,6 +61,7 @@
     color: white;
     font-size: rem(40px);
     white-space: nowrap;
+    transition: color 0.3s;
 
     position: absolute;
     left: 50%;
@@ -97,15 +71,21 @@
 }
 
 .menu__content {
-    background: rgba(47, 50, 52, .9);
+    background: rgba(47, 50, 52, 0.9);
     text-align: left;
-    width: 0;
+    max-width: 0;
+    visibility: hidden;
+    opacity: 0;
     overflow: hidden;
+    transition: visibility, opacity 0.3s linear;
 }
 
 .menu__close-btn {
+    position: absolute;
+    top: rem(30px);
+    right: rem(30px);
+    padding: 0;
     display: none;
-    background: none;
 }
 
 .menu-meat {
@@ -122,4 +102,38 @@
 
 .menu__text {
     @extend %text;
+    margin: rem(60px) rem(35px);
+}
+
+.menu__acco--active {
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.menu__item--active {
+    .menu__content {
+        max-width: 540px;
+        visibility: visible;
+        opacity: 1;
+
+        .menu__close-btn {
+            @include phone {
+                display: block;
+            }
+        }
+    }
+
+    .menu__name {
+        color: $orange;
+    }
+
+    @include phone {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }

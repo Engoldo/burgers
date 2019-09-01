@@ -57,6 +57,11 @@
     }
 }
 
+.comments__content--visible {
+    visibility: visible;
+    opacity: 1;
+}
+
 .comments__name {
     font-family: 'gagalinregular';
     font-size: rem(14px);

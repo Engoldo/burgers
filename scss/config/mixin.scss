@@ -45,3 +45,9 @@
         @content;
     }
 }
+
+@mixin smallheight {
+    @media screen and (max-height: $smallheight) {
+        @content;
+    }
+}
