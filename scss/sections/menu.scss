@@ -1,5 +1,5 @@
 .menu {
-    @include section-bg('./img/menu-bg.jpg');
+    @include section-bg('../img/menu-bg.jpg');
     background-position: right bottom;
     position: relative;
     display: flex;
@@ -89,15 +89,15 @@
 }
 
 .menu-meat {
-    background: url(./img/menu-meat-bg.jpg);
+    background: url(../img/menu-meat-bg.jpg);
 }
 
 .menu-veg {
-    background: url(./img/menu-veg-bg.jpg);
+    background: url(../img/menu-veg-bg.jpg);
 }
 
 .menu-diet {
-    background: url(./img/menu-diet-bg.jpg);
+    background: url(../img/menu-diet-bg.jpg);
 }
 
 .menu__text {

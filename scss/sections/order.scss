@@ -1,5 +1,5 @@
 .order {
-    @include section-bg("./img/order-bg.jpg");
+    @include section-bg("../img/order-bg.jpg");
     background-position: center center;
 }
 
@@ -147,7 +147,7 @@
     left: 10%;
     bottom: 0;
     right: 0;
-    background: url(./img/check.png) no-repeat;
+    background: url(../img/check.png) no-repeat;
     background-size: 90% 90%;
 }
 

@@ -33,7 +33,7 @@
 @for $i from 1 through 8 {
     .comments__item--#{$i} {
         @extend %comments__item;
-        background-image: url(./img/comments_ava#{$i}.jpg);
+        background-image: url(../img/comments_ava#{$i}.jpg);
         background-position: center center;
     }
 }

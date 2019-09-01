@@ -1,5 +1,5 @@
 .hello {
-    @include section-bg("./img/bg_sec1.jpg");
+    @include section-bg("../img/bg_sec1.jpg");
     background-position: bottom center;
     padding-top: rem(13px);
     position: relative;

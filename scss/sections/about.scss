@@ -1,14 +1,14 @@
 .about {
-    @include section-bg("./img/bg_sec2.jpg");
+    @include section-bg("../img/bg_sec2.jpg");
     background-position: center bottom;
 
     @include tablet {
-        @include section-bg("./img/about-bg-tab.jpg");
+        @include section-bg("../img/about-bg-tab.jpg");
         background-position: center center;
     }
 
     @include phone {
-        @include section-bg("./img/about-bg-mob.jpg");
+        @include section-bg("../img/about-bg-mob.jpg");
     }
 }
 
