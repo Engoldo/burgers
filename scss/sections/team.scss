@@ -1,5 +1,5 @@
 .team {
-    @include section-bg('../../img/team-bg.jpg');
+    @include section-bg('./img/team-bg.jpg');
     background-position: center bottom;
     position: relative;
 }
@@ -100,7 +100,7 @@
 .richard,
 .jake,
 .nick {
-    background-image: url(../../img/team-ava.jpg);
+    background-image: url(./img/team-ava.jpg);
 }
 
 .team__desc {

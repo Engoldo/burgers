@@ -1,5 +1,5 @@
 .contacts {
-    @include section-bg("../../img/map.jpg");
+    @include section-bg("./img/map.jpg");
     background-position: bottom center;
     position: relative;
 }
@@ -9,10 +9,10 @@
     bottom: 0;
     height: rem(60px);
     width: 100%;
-    background-image: url(../../img/footer-bg.jpg);
+    background-image: url(./img/footer-bg.jpg);
 
     @include phone {
-        background-image: url(../../img/footer-bg-mob.jpg);
+        background-image: url(./img/footer-bg-mob.jpg);
         height: rem(115px);
     }
 }
@@ -49,7 +49,7 @@
     color: $red;
 
     &::before {
-        content: url(../../icons/phone.svg);
+        content: url(./icons/phone.svg);
         margin-right: rem(8px);
     }
 }
