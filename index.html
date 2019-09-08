@@ -702,7 +702,7 @@
             <section class="order" id="order">
                 <div class="order__container container">
                     <h2 class="order__title">Закажите доставку</h2>
-                    <form id="orderForm" action="./server.php" method="POST" class="form main">
+                    <form id="orderForm" method="POST" class="form main">
                         <div class="form__column">
                             <div class="form__row">
                                 <div class="form__block">
@@ -711,8 +711,8 @@
                                         id="name">
                                 </div>
                                 <div class="form__block">
-                                    <label class="form__label" for="tel">Телефон</label>
-                                    <input name="user-tel" class="form__input form__input--tel" type="tel" id="tel">
+                                    <label class="form__label" for="phone">Телефон</label>
+                                    <input name="user-tel" class="form__input form__input--tel" type="tel" id="phone">
                                 </div>
                             </div>
                             <div class="form__row">
@@ -771,7 +771,7 @@
                                 <label class="form__label checkbox__label" for="nocall">Не перезванивать</label>
                             </div>
                             <div class="form__row form__row--centered">
-                                <button class="btn-red" type="submit">Заказать</button>
+                                <button class="btn-red" id="form-submit" type="submit">Заказать</button>
                                 <button class="btn-reset form__reset" type="reset">Очистить</button>
                             </div>
                         </div>
@@ -868,9 +868,9 @@
         </ul>
     </aside>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script> -->
     <script src="./js/script.js"></script>
-
+    <script src="./js/form-request.js"></script>
 </body>
 
 </html>
