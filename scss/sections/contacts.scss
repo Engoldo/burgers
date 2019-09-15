@@ -1,7 +1,14 @@
 .contacts {
-    @include section-bg("../img/map.jpg");
-    background-position: bottom center;
+    width: 100%;
+    height: 100%;
     position: relative;
+
+    &__hint {
+        color: $red;
+        font-family: Gagalin;
+        font-size: 14px;
+        font-weight: 300;
+    }
 }
 
 .contacts__footer {
