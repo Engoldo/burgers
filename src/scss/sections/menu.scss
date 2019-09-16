@@ -1,0 +1,139 @@
+.menu {
+    @include section-bg('../img/menu-bg.jpg');
+    background-position: right bottom;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__title {
+    @extend %title;
+    color: white;
+    position: absolute;
+    top: rem(100px);
+    left: rem(100px);
+
+    @include laptop {
+        left: rem(50px);
+    }
+
+    @include phone {
+        display: none;
+    }
+}
+
+.menu__acco {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.menu__list {
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu__item {
+    display: flex;
+    height: 100%;
+    position: relative;
+}
+
+.menu__slider {
+    position: relative;
+    min-width: rem(80px);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover .menu__name {
+        color: $orange;
+    }
+}
+
+.menu__name {
+    @extend %title;
+    color: white;
+    font-size: rem(40px);
+    white-space: nowrap;
+    transition: color 0.3s;
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform-origin: 0 0;
+    transform: rotate(-90deg) translate(0, -50%);
+}
+
+.menu__content {
+    background: rgba(47, 50, 52, 0.9);
+    text-align: left;
+    max-width: 0;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: visibility, opacity 0.3s linear;
+}
+
+.menu__close-btn {
+    position: absolute;
+    top: rem(30px);
+    right: rem(30px);
+    padding: 0;
+    display: none;
+}
+
+.menu-meat {
+    background: url(../img/menu-meat-bg.jpg);
+}
+
+.menu-veg {
+    background: url(../img/menu-veg-bg.jpg);
+}
+
+.menu-diet {
+    background: url(../img/menu-diet-bg.jpg);
+}
+
+.menu__text {
+    @extend %text;
+    margin: rem(60px) rem(35px);
+}
+
+.menu__acco--active {
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.menu__item--active {
+    .menu__content {
+        max-width: 540px;
+        visibility: visible;
+        opacity: 1;
+
+        .menu__close-btn {
+            @include phone {
+                display: block;
+            }
+        }
+    }
+
+    .menu__name {
+        color: $orange;
+    }
+
+    @include phone {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

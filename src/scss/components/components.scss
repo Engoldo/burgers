@@ -1,0 +1,118 @@
+.sidebar {
+    position: fixed;
+    right: rem(40px);
+    top: rem(80px);
+
+    @include tablet {
+        display: none;
+    }
+
+    @include phone {
+        display: none;
+    }
+}
+
+.sidebar__item {
+    @include circle(rem(6px), white);
+    position: relative;
+
+    &:hover .sidebar__link {
+        display: block;
+    }
+
+    &:not(:first-child) {
+        margin-top: rem(15px);
+    }
+}
+
+.sidebar__item--active {
+    .sidebar__link {
+        display: block;
+    }
+}
+
+.sidebar__link {
+    @include circle(rem(14px), transparent);
+    border: 1px solid white;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: none;
+}
+
+.btn-red {
+    @extend %btn;
+    background: $red;
+
+    &:hover {
+        background: darken($red, 10%);
+    }
+}
+
+.btn-gray {
+    @extend %btn;
+    background: $gray;
+
+    &:hover {
+        background: darken($gray, 10%);
+    }
+}
+
+.comment-modal__bg {
+    z-index: 20;
+    background: rgba($gray, .5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity visibility 0.7s;
+}
+
+.modal--visible {
+    height: initial;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity visibility 0.7s;
+}
+
+.comment-modal__modal {
+    width: rem(460px);
+    background: white;
+    border-radius: rem(8px);
+    padding: rem(30px) rem(20px) rem(25px) rem(20px);
+    position: relative;
+    margin: 7px;
+}
+
+.comment-modal__text {
+    @extend %text;
+    text-align: left;
+    color: $gray;
+}
+
+.comment-modal__name {
+    font-family: 'gagalinregular';
+    font-size: rem(14px);
+    color: $gray;
+    margin-bottom: rem(30px);
+    display: block;
+}
+
+.comment-modal__close-btn {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-100%, 100%)
+}

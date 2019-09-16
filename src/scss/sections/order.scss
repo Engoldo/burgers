@@ -1,0 +1,172 @@
+.order {
+    @include section-bg("../img/order-bg.jpg");
+    background-position: center center;
+}
+
+.order__container {
+    justify-content: center;
+}
+
+.order__title {
+    @extend %title;
+    color: $orange;
+    margin-bottom: rem(45px);
+}
+
+.form__label {
+    @extend %text;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form__column {
+    width: 50%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.form__column--right {
+    margin-left: rem(20px);
+
+    @include tablet {
+        margin: 0;
+    }
+}
+
+.form__label {
+    display: block;
+    cursor: pointer;
+    margin-bottom: rem(7px);
+}
+
+.form__row {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.form__row--centered {
+    @include phone {
+        justify-content: center;
+    }
+}
+
+.form__input {
+    padding: rem(8px) rem(18px);
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: rem(17px);
+
+    @extend %text;
+    color: $gray;
+
+    &:focus {
+        outline-offset: -2px;
+        outline: $orange 2px solid;
+    }
+
+    &:focus-within {
+        background: white;
+    }
+}
+
+.form__textarea {
+    min-height: rem(123px);
+    padding: rem(8px);
+}
+
+.form__block {
+    flex: 1;
+    margin-left: rem(20px);
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.radio__block {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(23px);
+    margin-right: rem(20px);
+}
+
+.radio__label,
+.checkbox__label {
+    margin-bottom: 0;
+}
+
+.form__radio {
+    display: none;
+
+    &:checked+.radio__styled::before {
+        content: '';
+        @include circle(rem(7px), $red);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.radio__styled {
+    @include circle(rem(15px), white);
+    margin-right: rem(10px);
+    position: relative;
+}
+
+.checkbox__styled {
+    width: rem(15px);
+    height: rem(15px);
+    background: white;
+    margin-right: rem(10px);
+    position: relative;
+}
+
+.checkbox__styled::before {
+    visibility: hidden;
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    bottom: 0;
+    right: 0;
+    background: url(../img/check.png) no-repeat;
+    background-size: 90% 90%;
+}
+
+.form__checkbox {
+    display: none;
+
+    &:checked+.checkbox__styled::before {
+        visibility: visible;
+    }
+}
+
+.btn-reset {
+    @extend %text;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.form__reset {
+    margin-left: rem(20px);
+}
